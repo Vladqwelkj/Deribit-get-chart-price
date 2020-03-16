@@ -1,19 +1,20 @@
+import requests
+import json
+import datetime
+import time
+
 ###
-START_TIME = datetime.datetime(2019, 4, 11,   0,00)
-START_TIME = datetime.datetime.now()
+START_TIME = datetime.datetime(2019, 4, 11,   0,0)
+STOP_TIME = datetime.datetime.now() # datetime.datetime.now() -default
 INSTRUMENT_NAME = 'BTC-PERPETUAL'
 RESOLUTION = 5
 
 FILENAME = 'prices.txt'
 ###
 
-import requests
-import json
-import datetime
-import time
 
 start_unix = time.mktime(START_TIME.timetuple())*1000
-stop_unix = time.mktime(START_TIME.timetuple())*1000
+stop_unix = time.mktime(STOP_TIME.timetuple())*1000
 
 params = {
 	'instrument_name': INSTRUMENT_NAME,
